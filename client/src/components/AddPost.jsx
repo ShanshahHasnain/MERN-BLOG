@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { createPost } from '../services/api';
+import './AddPost.css';
 
 const AddPost = () => {
   const navigate = useNavigate();
@@ -8,19 +9,28 @@ const AddPost = () => {
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
+    
     try {
-      const response = await axios.post('http://localhost:5000/api/posts', {
+      const response = await createPost({
         title,
         content,
         author
       });
       
-      if (response.data) {
-        alert('Post added successfully!');
-        navigate('/'); // Redirect to home page after successful post
+      if (response) {
+        setSuccess('Post added successfully!');
+        setTitle('');
+        setContent('');
+        setAuthor('');
+        setTimeout(() => {
+          navigate('/');
+        }, 1500);
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Error adding post');
@@ -29,51 +39,53 @@ const AddPost = () => {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h2>Add New Post</h2>
-      {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
+    <div className="form-container fade-in">
+      <div className="form-header">
+        <h2>Create New Post</h2>
+        <p>Share your thoughts with the world</p>
+      </div>
+      
+      {error && <div className="error-message">{error}</div>}
+      {success && <div className="success-message">{success}</div>}
+      
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '15px' }}>
+        <div className="form-group">
+          <label className="form-label">Title</label>
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Enter post title..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ width: '100%', padding: '8px' }}
+            className="form-input"
           />
         </div>
-        <div style={{ marginBottom: '15px' }}>
+        
+        <div className="form-group">
+          <label className="form-label">Content</label>
           <textarea
-            placeholder="Content"
+            placeholder="Write your post content here..."
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
-            style={{ width: '100%', padding: '8px', minHeight: '150px' }}
+            className="form-textarea"
           ></textarea>
         </div>
-        <div style={{ marginBottom: '15px' }}>
+        
+        <div className="form-group">
+          <label className="form-label">Author</label>
           <input
             type="text"
-            placeholder="Author"
+            placeholder="Your name..."
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             required
-            style={{ width: '100%', padding: '8px' }}
+            className="form-input"
           />
         </div>
-        <button 
-          type="submit"
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
-          Add Post
+        
+        <button type="submit" className="submit-button">
+          Publish Post
         </button>
       </form>
     </div>
@@ -81,4 +93,3 @@ const AddPost = () => {
 };
 
 export default AddPost;
-

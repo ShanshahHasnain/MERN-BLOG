@@ -1,0 +1,13 @@
+.navbar {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eaeaea;
+}
+
+.nav-link {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
