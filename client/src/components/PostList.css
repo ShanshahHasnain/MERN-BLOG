@@ -1,0 +1,245 @@
+/* 🌈 Modern PostList.css - Redesigned */
+
+/* Layout */
+.posts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa, #e3eeff);
+  min-height: 100vh;
+  font-family: "Inter", "Poppins", sans-serif;
+}
+
+/* Header */
+.posts-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1e293b;
+}
+
+.posts-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid */
+.posts-grid {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* 🧊 Card Style */
+.post-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+}
+
+/* Title */
+.post-title {
+  font-size: 1.6rem;
+  color: #0f172a;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+/* Content */
+.post-content {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Meta info */
+.post-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Author */
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-author-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Date */
+.post-date {
+  color: #94a3b8;
+}
+
+/* Empty and Error States */
+.no-posts,
+.loading-spinner,
+.error-message {
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+.no-posts {
+  color: #64748b;
+}
+
+.loading-spinner {
+  color: #2563eb;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* ✏️ Edit Form */
+.edit-form {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s ease;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.edit-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Buttons */
+.edit-buttons,
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Button Variants */
+.edit-btn {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.save-btn {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background-color: #16a34a;
+}
+
+.cancel-btn {
+  background-color: #94a3b8;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #64748b;
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .posts-container {
+    padding: 30px 15px;
+  }
+
+  .posts-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .post-card {
+    padding: 22px;
+  }
+
+  .post-title {
+    font-size: 1.4rem;
+  }
+}
