@@ -11,3 +11,66 @@
   color: #2563eb;
   font-weight: 500;
 }
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 1.2rem 3rem;
+  }
+  
+  .nav-link {
+    margin-right: 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-link {
+    margin-right: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (large phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .nav-link {
+    margin-right: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 0.7rem 0.8rem;
+  }
+  
+  .nav-link {
+    margin-right: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+/* Very small devices (phones, less than 400px) */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.6rem 0.5rem;
+  }
+  
+  .nav-link {
+    margin-right: 0.6rem;
+    font-size: 0.85rem;
+  }
+}
