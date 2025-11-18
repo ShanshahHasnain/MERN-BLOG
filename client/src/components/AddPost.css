@@ -1,5 +1,3 @@
-/* 🌈 Modern AddPost.css - Redesigned */
-
 .form-container {
   max-width: 700px;
   margin: 60px auto;
@@ -120,24 +118,172 @@
   border: 1px solid #bbf7d0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ============ MEDIA QUERIES ============ */
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media (min-width: 1200px) {
   .form-container {
-    margin: 25px;
-    padding: 25px;
+    max-width: 750px;
+    margin: 80px auto;
+    padding: 45px;
   }
-
+  
   .form-header h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
+  
+  .form-textarea {
+    min-height: 200px;
+  }
+}
 
+/* Medium devices (tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .form-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 35px;
+  }
+  
+  .form-header h2 {
+    font-size: 2rem;
+  }
+  
+  .form-textarea {
+    min-height: 160px;
+  }
+  
+  .submit-button {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Small devices (large phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .form-container {
+    margin: 30px 20px;
+    padding: 30px;
+    border-radius: 14px;
+  }
+  
+  .form-header {
+    margin-bottom: 25px;
+  }
+  
+  .form-header h2 {
+    font-size: 1.7rem;
+  }
+  
+  .form-group {
+    margin-bottom: 22px;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+  }
+  
   .form-input,
   .form-textarea {
+    padding: 12px 14px;
     font-size: 0.95rem;
   }
-
+  
+  .form-textarea {
+    min-height: 140px;
+  }
+  
   .submit-button {
     padding: 14px;
+    font-size: 1.05rem;
+  }
+  
+  .error-message,
+  .success-message {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .form-container {
+    margin: 20px 15px;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+  
+  .form-container:hover {
+    transform: none; /* Remove hover effect on mobile for better UX */
+  }
+  
+  .form-header {
+    margin-bottom: 20px;
+  }
+  
+  .form-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  
+  .form-textarea {
+    min-height: 120px;
+  }
+  
+  .submit-button {
+    padding: 12px;
     font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  .error-message,
+  .success-message {
+    padding: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Better focus states for mobile */
+  .form-input:focus,
+  .form-textarea:focus {
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  }
+}
+
+/* Very small devices (phones, less than 400px) */
+@media (max-width: 400px) {
+  .form-container {
+    margin: 15px 10px;
+    padding: 20px 15px;
+  }
+  
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 8px 10px;
+  }
+  
+  .submit-button {
+    padding: 10px;
+    font-size: 0.95rem;
   }
 }
