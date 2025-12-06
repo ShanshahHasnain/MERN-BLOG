@@ -1,0 +1,293 @@
+.auth-landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  padding: 20px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 380px;
+  animation: fadeIn 0.3s ease;
+  margin: 0 auto;
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.auth-landing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-landing-form input {
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.auth-landing-form input:focus {
+  border-color: #2563eb;
+}
+
+.auth-btn {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s ease;
+}
+
+.auth-btn:hover {
+  background: #1d4ed8;
+}
+
+.auth-toggle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 16px;
+}
+
+.auth-toggle button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.auth-toggle button:hover {
+  color: #1d4ed8;
+}
+
+.auth-landing-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .auth-card {
+    padding: 40px 36px;
+  }
+
+  .auth-title {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+  }
+
+  .auth-landing-form input {
+    padding: 13px 15px;
+    font-size: 1rem;
+  }
+
+  .auth-btn {
+    padding: 13px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Laptop / small desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .auth-card {
+    padding: 36px 32px;
+  }
+
+  .auth-title {
+    font-size: 1.7rem;
+    margin-bottom: 26px;
+  }
+
+  .auth-landing-form input {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .auth-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .auth-card {
+    padding: 32px 28px;
+    max-width: 360px;
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+  }
+
+  .auth-landing-form input {
+    padding: 11px 13px;
+    font-size: 0.93rem;
+  }
+
+  .auth-btn {
+    padding: 11px;
+    font-size: 0.95rem;
+  }
+
+  .auth-toggle {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small devices (large phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .auth-card {
+    padding: 28px 24px;
+    max-width: 340px;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .auth-landing-form {
+    gap: 12px;
+  }
+
+  .auth-landing-form input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .auth-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .auth-toggle {
+    font-size: 0.85rem;
+    margin-top: 14px;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .auth-card {
+    padding: 24px 20px;
+    max-width: 320px;
+  }
+
+  .auth-title {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .auth-landing-form {
+    gap: 12px;
+  }
+
+  .auth-landing-form input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .auth-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .auth-toggle {
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+
+  .auth-landing-error {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small devices (phones, less than 400px) */
+@media (max-width: 400px) {
+  .auth-landing {
+    padding: 15px;
+  }
+
+  .auth-card {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .auth-title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .auth-landing-form {
+    gap: 10px;
+  }
+
+  .auth-landing-form input {
+    padding: 9px 11px;
+    font-size: 0.85rem;
+  }
+
+  .auth-btn {
+    padding: 9px;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+
+  .auth-toggle {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+
+  .auth-landing-error {
+    padding: 7px 9px;
+    font-size: 0.8rem;
+  }
+}

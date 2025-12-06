@@ -1,0 +1,237 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.nav-user {
+  margin-right: 12px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.nav-user small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.nav-link.button-like {
+  background: linear-gradient(90deg,#2563eb,#06b6d4);
+  color: #fff !important;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.nav-link.button-like:hover {
+  background: linear-gradient(90deg,#1d4ed8,#0891b2);
+}
+
+.delete-account-btn {
+  background: #ef4444 !important;
+  color: white !important;
+  padding: 6px 10px !important;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.delete-account-btn:hover {
+  background: #dc2626 !important;
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 1.2rem 3rem;
+    gap: 20px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 8px 12px;
+  }
+
+  .nav-user {
+    font-size: 1.05rem;
+  }
+}
+
+/* Laptop / small desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    padding: 0.95rem 2rem;
+    gap: 16px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .nav-user {
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0.9rem 1.5rem;
+    gap: 12px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+
+  .nav-user {
+    font-size: 0.9rem;
+    margin-right: 8px;
+  }
+}
+
+/* Small devices (large phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    flex-direction: row;
+    padding: 0.8rem 1rem;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .nav-left {
+    flex-wrap: wrap;
+    gap: 8px;
+    order: 1;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+    order: 2;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 5px 7px;
+  }
+
+  .nav-user {
+    font-size: 0.85rem;
+    margin-right: 6px;
+  }
+
+  .nav-user small {
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0.75rem 0.8rem;
+  }
+
+  .nav-left, .nav-right {
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 5px 7px;
+  }
+
+  .nav-user { 
+    display: none;
+  }
+
+  .delete-account-btn {
+    padding: 5px 8px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .nav-link.button-like {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small devices (phones, less than 400px) */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0.6rem 0.6rem;
+    gap: 6px;
+  }
+
+  .nav-left, .nav-right {
+    gap: 6px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  button {
+    padding: 4px 6px !important;
+    font-size: 0.75rem !important;
+  }
+}
