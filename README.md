@@ -1,16 +1,38 @@
-# Blog CRUD Application
+# MERN Blog Application
 
-A full-stack blog application built with React, Node.js, Express, and MongoDB.
+A complete full-stack blog application built with React, Node.js, Express, and MongoDB. Features user authentication, ownership-based post control, and fully responsive design across all devices.
 
-## Features
+## ✨ Features
 
-- 📝 Create, Read, Update, and Delete blog posts
-- 🎨 Modern and responsive UI
-- 🔄 Real-time updates
-- 📱 Mobile-friendly design
-- ✨ Smooth animations
-- 🛡️ Error handling
-- 💾 MongoDB database storage
+### Authentication & User Management
+- 🔐 User Registration with secure password hashing (bcryptjs)
+- 🔑 JWT-based Login/Logout with token persistence
+- 👤 Account Deletion with cascade delete of user's posts
+- 💾 LocalStorage token management for persistent sessions
+
+### Blog Post Management
+- 📝 Create blog posts (title, content) with automatic author assignment
+- ✏️ Edit posts (only post owners can edit)
+- 🗑️ Delete posts (only post owners can delete)
+- 👥 View all posts with author information
+- 📖 "Read more" expand/collapse for long content
+- ⋯ Three-dot menu with Edit/Delete options (owner only)
+
+### User Interface & UX
+- 🎨 Modern, minimal design with gradient accents
+- 📱 Fully responsive across all devices (320px to 4K+)
+- 🎭 Smooth animations and transitions
+- 🌈 Clean color scheme with blue/cyan gradients
+- ✅ Real-time form validation
+- ⚠️ Error handling with user-friendly messages
+
+### Technical Features
+- 🔄 Real-time post updates without page reload
+- 🛡️ Secure JWT-based authentication
+- 🔒 Ownership verification for post modifications
+- 📊 MongoDB with Mongoose ODM
+- 🚀 Vite-powered fast development builds
+- 🎯 React Router for smooth navigation
 
 ## Prerequisites
 
@@ -22,9 +44,38 @@ Before running this application, make sure you have the following installed:
 ## Project Structure
 
 ```
-CRUD/
-├── client/          # React frontend
-└── server/          # Node.js backend
+MERN-BLOG/
+├── client/                          # React frontend (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx          # Navigation with user info & logout
+│   │   │   ├── AuthLanding.jsx     # Login/Register form (toggle UI)
+│   │   │   ├── Login.jsx           # Login component
+│   │   │   ├── Register.jsx        # Registration component
+│   │   │   ├── PostList.jsx        # Display all posts with edit/delete
+│   │   │   ├── AddPost.jsx         # Create new post form
+│   │   │   └── *.css               # Responsive component styles
+│   │   ├── pages/
+│   │   │   └── Home.jsx            # Home page layout
+│   │   ├── services/
+│   │   │   └── api.js              # Axios API client with token interceptor
+│   │   ├── App.jsx                 # Main app with routing
+│   │   └── index.css               # Global styles
+│   ├── vite.config.js              # Vite configuration
+│   └── package.json
+│
+└── server/                          # Node.js/Express backend
+    ├── models/
+    │   ├── User.js                 # User schema with email uniqueness
+    │   └── Post.js                 # Post schema with author reference
+    ├── routes/
+    │   ├── auth.js                 # Register, Login, Delete Account
+    │   └── posts.js                # CRUD operations (protected)
+    ├── middleware/
+    │   └── auth.js                 # JWT verification middleware
+    ├── server.js                   # Express app entry point
+    ├── config.env                  # Environment variables
+    └── package.json
 ```
 
 ## Backend Setup
